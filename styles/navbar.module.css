@@ -1,0 +1,141 @@
+.navbar{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('https://images.unsplash.com/photo-1664575197229-3bbebc281874?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.navbarContain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 8vh;
+    padding: 0.2rem 0.8rem;
+}
+.logo{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+}
+.dropDown{
+    width: 100%;
+    height: 25vh;
+    position: absolute;
+    background-color: black;
+    top: -250px;
+    display: none;
+}
+.dropDownActive{
+    width: 100%;
+    height: 25vh;
+    position: absolute;
+    background-color: black;
+    top: -250px;
+    display: none;
+    animation: topDown 0.2s ease-in-out 1 forwards;
+}
+.linkContainer{
+    font-family: 'Roboto Mono';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+}
+.linkContainer a{
+    text-decoration: none;
+    color: #fff;
+}
+.linkContainer a:hover{
+    color: #6f42c1;
+}
+.navbarList{
+    font-family: 'Roboto Mono';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+.navbarList div{
+    cursor: pointer;
+}
+.navbarList div a{
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.navbarList div a:hover{
+    color: #6f42c1;
+}
+.hamburger{
+    display: none;
+}
+.title{
+    width: 100%;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title h1{
+    text-align: center;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 7rem;
+    line-height: 155px;
+    letter-spacing: 2px;
+}
+@media only screen and (max-width:1074px) {
+    .navbarContain{
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        align-items: center;
+        width: 100%;
+        height: 8vh;
+        z-index: 2;
+    }
+    .logo{
+        font-size: 1.2rem;
+    }
+    .navbarList{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+    .hamburgerIcon{
+        width: 2rem;
+        height: 2rem;
+    }
+    .dropDown{
+        display: block;
+    }
+    .dropDownActive{
+        display: block;
+    }
+    .title h1{
+        font-size: 5.2rem;
+        line-height: 125px;
+        letter-spacing: 2px;
+    }
+}
+@media only screen and (max-width:568px){
+    .title h1{
+        font-size: 3.2rem;
+        line-height: 90px;
+        letter-spacing: 2px;
+    }
+}
+@keyframes topDown {
+    0%{
+        top:-250px;
+        z-index: -1;
+    }
+    100%{
+        top:59px;
+        z-index: 1;
+    }
+}
