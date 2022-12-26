@@ -1,9 +1,9 @@
 import React,{ useState } from "react";
 import Image from "next/image";
 import { imagesMap } from "../../utils/imgaes";
-import styles from '../../styles/selectedWorkCard.module.css'
+import styles from '../../styles/selectedWorkCard.module.css' 
 
-const SelectedWorkCard = ({project_name}:{project_name:String}):JSX.Element=>{
+const SelectedWorkCard = ({project_name}:{project_name:string}):JSX.Element=>{
     const [contentStyle,setContentStyle] = useState(styles.contentContainer);
     const mouseIn = ()=>{
         setContentStyle(styles.activecontentContainer)
