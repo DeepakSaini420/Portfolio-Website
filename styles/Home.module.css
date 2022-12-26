@@ -34,7 +34,12 @@
 }
 
 @media only screen and (max-width:568px){
+    .homeCardContainer{
+      justify-content: center;
+  }
   .workCard{
+    padding-left: 0.8rem;
+    align-items: center;
     flex-direction: column;
   }
 }

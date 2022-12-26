@@ -29,10 +29,10 @@ export default function Home():JSX.Element {
             </div>
           </div>
           <div className={styles.workCard}>
-            <SelectedWorkCard/>
-            <SelectedWorkCard/>
-            <SelectedWorkCard/>
-            <SelectedWorkCard/>
+            <SelectedWorkCard project_name={"Blood-Donation-Website"}/>
+            <SelectedWorkCard project_name={"Clothing-Website-NextJS-Frontend"}/>
+            <SelectedWorkCard project_name={"Paddy_Disease_Detection_Using_CNN"}/>
+            <SelectedWorkCard project_name={"React-Projects"}/>
           </div>
         </div>
       </main>

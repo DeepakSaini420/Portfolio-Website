@@ -14,8 +14,8 @@ const Fotter = ():JSX.Element =>{
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat quidem mollitia rem id ad minus tempore consectetur, sint laudantium nulla sit earum commodi, veniam corporis.</p>
                 </div>
             </div>
-            <div className={styles.aboutUs}>
-                <div id={styles.about}>
+            <div className={styles.navigation}>
+                <div id={styles.navigationTitle}>
                     <p>Navigation</p>
                 </div>
                 <div className={styles.navigationList}>
@@ -36,15 +36,17 @@ const Fotter = ():JSX.Element =>{
                 </div>
             </div>
             <div className={ styles.socialMedia }>
-                <div>
-                    <Link href={'https://github.com/DeepakSaini420'}>
-                        <BsGithub/>
-                    </Link>
-                </div>
-                <div>
-                    <Link href={'https://www.linkedin.com/in/deepak-saini-3790221bb'}>
-                        <BsLinkedin/>
-                    </Link>
+                <div className={styles.socialMediaContainer}>
+                    <div>
+                        <Link href={'https://github.com/DeepakSaini420'}>
+                            <BsGithub/>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link href={'https://www.linkedin.com/in/deepak-saini-3790221bb'}>
+                            <BsLinkedin/>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,46 @@
+.contact{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formContainer{
+    width: 60%;
+    margin-top: 4.2rem;
+}
+.flexContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.flexItems{
+    width: 48%;
+}
+.inputCt{
+    margin-top: 1.2rem;
+}
+.btn{
+    background-color: #cdcecf;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 1.4rem 1.2rem;
+    cursor: pointer;
+    font-family: 'Roboto Mono';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.2s ease-in-out;
+}
+.btn:hover{
+    background-color: black;
+    color: #ffff;
+}
+
+@media only screen and (max-width:600px) {
+    .flexContainer{
+        width: 100%;
+        display: block;
+    }
+    .flexItems{
+        margin-top: 1.2rem;
+        width: 100%;
+    }
+}

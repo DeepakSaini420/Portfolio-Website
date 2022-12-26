@@ -1,0 +1,35 @@
+.projectContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.projects{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.projectHead {
+    font-family: 'Abril Fatface', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projectsHolder{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media only screen and (min-width:900px) {
+    .projectsHolder{
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width:600px) {
+    .projectsHolder{
+        justify-content: center;
+    }
+}

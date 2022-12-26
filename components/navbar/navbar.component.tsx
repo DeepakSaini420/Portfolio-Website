@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {GiHamburgerMenu} from 'react-icons/gi' 
@@ -11,7 +11,7 @@ const Navbar = () =>{
         <div className={styles.navbar}>
             <div className={styles.navbarContain}>
                 <div className={styles.logo}>
-                    <p>DEEPAK</p>
+                    <Link href={'/'}>DEEPAK</Link>
                 </div>
                 <div className={styles.navbarList}>
                     <div>
@@ -24,7 +24,7 @@ const Navbar = () =>{
                         <Link href={'/project'}>PROJECTS</Link>
                     </div>
                     <div>
-                        <Link href={'/about'}>CONTACT</Link>
+                        <Link href={'/contact'}>CONTACT</Link>
                     </div>
                 </div>
                 <div className={styles.hamburger} onClick={()=>setDropDown(!dropDown)}>
@@ -42,7 +42,7 @@ const Navbar = () =>{
                     <Link href={'/project'}>PROJECTS</Link>
                 </div>
                 <div className={styles.linkContainer}>
-                    <Link href={'/about'}>CONTACT</Link>
+                    <Link href={'/contact'}>CONTACT</Link>
                 </div>
             </div>
             <div className={styles.title}>

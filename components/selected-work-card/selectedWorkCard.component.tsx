@@ -1,19 +1,23 @@
 import React,{ useState } from "react";
 import Image from "next/image";
+import { imagesMap } from "../../utils/imgaes";
 import styles from '../../styles/selectedWorkCard.module.css'
 
-const SelectedWorkCard = ():JSX.Element=>{
+const SelectedWorkCard = ({project_name}:{project_name:String}):JSX.Element=>{
     const [contentStyle,setContentStyle] = useState(styles.contentContainer);
     const mouseIn = ()=>{
         setContentStyle(styles.activecontentContainer)
     }
+    const gitRedirect = ()=>{
+        window.location.href = `https://github.com/DeepakSaini420/${project_name}`
+    }
     return (
-        <div className={styles.selectedWorkCard} onMouseOver={mouseIn} onMouseLeave={()=>setContentStyle(styles.contentContainer)}>
+        <div className={styles.selectedWorkCard} onMouseOver={mouseIn} onMouseLeave={()=>setContentStyle(styles.contentContainer)} onClick={gitRedirect}>
             <div className={styles.imgCard}>
-                <Image src={'https://images.unsplash.com/photo-1599328580087-15c9dab481f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80'} alt={"img.jpg"} width={250} height={250} />
+                <Image src={imagesMap[project_name]} alt={"img.jpg"} width={250} height={250} />
             </div>
             <div className={contentStyle}>
-                <p>Project Name Here</p>
+                <p>{project_name}</p>
             </div>
         </div>
     )
