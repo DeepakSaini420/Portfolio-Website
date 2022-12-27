@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion as m } from 'framer-motion'
 import { CiMonitor } from 'react-icons/ci'
 import { HiOutlineDevicePhoneMobile } from 'react-icons/hi2'
 import { GiBrain } from 'react-icons/gi'
@@ -11,7 +12,12 @@ interface props{
 
 const HomeCard = ({type,desc}:props)=>{
     return(
-        <div className={styles.HomeCard}>
+        <m.div
+        initial={{y:'60%',opacity:0}}
+        whileInView={{y:'0%',opacity:1}}
+        transition={{duration:0.75,ease:'easeInOut',delay:0.2}}
+        viewport={{once:true}}
+        className={styles.HomeCard}>
             <div>
                 {
                     type==='Web Development' ? <CiMonitor className={styles.Icon}/> : '' 
@@ -29,7 +35,7 @@ const HomeCard = ({type,desc}:props)=>{
             <div className={styles.description}>
                 <p>{desc}</p>
             </div>
-        </div>
+        </m.div>
     )
 }
 

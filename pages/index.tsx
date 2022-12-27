@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { motion as m } from 'framer-motion'
 import HomeCard from '../components/home-card/homeCard.component'
 import SelectedWorkCard from '../components/selected-work-card/selectedWorkCard.component'
 import styles from '../styles/Home.module.css'
@@ -12,7 +13,12 @@ export default function Home():JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <m.main 
+        initial={{y:'100%'}}
+        animate={{y:'0%'}}
+        transition={{duration:0.75,ease:'easeInOut'}}
+        exit={{opacity:1}}
+      >
         <div className={styles.homeCardContainer}>
           <HomeCard type={"Web Development"} desc="
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptate maiores libero possimus magni sequi laboriosam ducimus, totam, impedit, voluptatibus quaerat illo earum. Modi, soluta!"/>
@@ -29,13 +35,41 @@ export default function Home():JSX.Element {
             </div>
           </div>
           <div className={styles.workCard}>
-            <SelectedWorkCard project_name={"Blood-Donation-Website"}/>
-            <SelectedWorkCard project_name={"Clothing-Website-NextJS-Frontend"}/>
-            <SelectedWorkCard project_name={"Paddy_Disease_Detection_Using_CNN"}/>
-            <SelectedWorkCard project_name={"React-Projects"}/>
+            <m.div 
+            initial={{x:'-60%',opacity:0,position:'relative'}}
+            whileInView={{x:'0%',opacity:1}}
+            transition={{duration:0.75,ease:'easeInOut'}}
+            viewport={{once:true}}
+            >
+              <SelectedWorkCard project_name={"Blood-Donation-Website"}/>
+            </m.div>
+            <m.div
+            initial={{x:'60%',opacity:0,position:'relative'}}
+            whileInView={{x:'0%',opacity:1}}
+            transition={{duration:0.75,ease:'easeInOut'}}
+            viewport={{once:true}}
+            >
+              <SelectedWorkCard project_name={"Clothing-Website-NextJS-Frontend"}/>
+            </m.div>
+            <m.div
+            initial={{x:'-60%',opacity:0,position:'relative'}}
+            whileInView={{x:'0%',opacity:1}}
+            transition={{duration:0.75,ease:'easeInOut'}}
+            viewport={{once:true}}
+            >
+              <SelectedWorkCard project_name={"Paddy_Disease_Detection_Using_CNN"}/>
+            </m.div>
+            <m.div
+            initial={{x:'60%',opacity:0,position:'relative'}}
+            whileInView={{x:'0%',opacity:1}}
+            transition={{duration:0.75,ease:'easeInOut'}}
+            viewport={{once:true}}
+            >
+              <SelectedWorkCard project_name={"React-Projects"}/>
+            </m.div>
           </div>
         </div>
-      </main>
+      </m.main>
     </>
   )
 }

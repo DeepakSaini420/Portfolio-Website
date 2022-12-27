@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { motion as m } from 'framer-motion'
 import { useRouter } from "next/router";
 import {GiHamburgerMenu} from 'react-icons/gi' 
 import styles from  '../../styles/navbar.module.css'
@@ -10,10 +11,20 @@ const Navbar = () =>{
     return (
         <div className={styles.navbar}>
             <div className={styles.navbarContain}>
-                <div className={styles.logo}>
+                <m.div 
+                initial={{y:'30%',opacity:0}}
+                animate={{y:'0%',opacity:1}}
+                transition={{duration:1.1,ease:'easeInOut'}}
+                exit={{opacity:0}}
+                className={styles.logo}>
                     <Link href={'/'}>DEEPAK</Link>
-                </div>
-                <div className={styles.navbarList}>
+                </m.div>
+                <m.div 
+                initial={{y:'30%',opacity:0}}
+                animate={{y:'0%',opacity:1}}
+                transition={{duration:1.1,ease:'easeInOut'}}
+                exit={{opacity:0}}
+                className={styles.navbarList}>
                     <div>
                         <Link href={'/'}>HOME</Link>
                     </div>
@@ -26,26 +37,32 @@ const Navbar = () =>{
                     <div>
                         <Link href={'/contact'}>CONTACT</Link>
                     </div>
-                </div>
+                </m.div>
                 <div className={styles.hamburger} onClick={()=>setDropDown(!dropDown)}>
                     <GiHamburgerMenu className={styles.hamburgerIcon}/>
                 </div>
             </div>
             <div className={ dropDown?styles.dropDownActive:styles.dropDown}>
-                <div className={styles.linkContainer}>
+                <div className={styles.linkContainer} onClick={()=>{setDropDown(false)}}>
                     <Link href={'/'}>HOME</Link>
                 </div>
-                <div className={styles.linkContainer}>
+                <div className={styles.linkContainer} onClick={()=>{setDropDown(false)}}>
                     <Link href={'/about'}>ABOUT</Link>
                 </div>
-                <div className={styles.linkContainer}>
+                <div className={styles.linkContainer} onClick={()=>{setDropDown(false)}}>
                     <Link href={'/project'}>PROJECTS</Link>
                 </div>
-                <div className={styles.linkContainer}>
+                <div className={styles.linkContainer} onClick={()=>{setDropDown(false)}}>
                     <Link href={'/contact'}>CONTACT</Link>
                 </div>
             </div>
-            <div className={styles.title}>
+            <m.div 
+                className={styles.title}
+                initial={{y:'30%',opacity:0}}
+                animate={{y:'0%',opacity:1}}
+                transition={{duration:1.1,ease:'easeInOut'}}
+                exit={{opacity:0}}
+            >
                     {
                         router.pathname === '/' ? (
                             <h1>
@@ -74,7 +91,7 @@ const Navbar = () =>{
                             </h1>
                         ):''
                     }
-            </div>
+            </m.div>
         </div>
     )
 }

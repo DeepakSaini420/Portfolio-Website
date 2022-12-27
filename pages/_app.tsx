@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app' 
 import Navbar from '../components/navbar/navbar.component'
 import Fotter from '../components/fotter/fotter.component'
 import GetInTouch from '../components/getInTouch/getInTouch.component'
